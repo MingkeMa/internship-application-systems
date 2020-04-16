@@ -1,0 +1,8 @@
+usage: 
+gcc -o ping ping.c
+./ping [ -t ttl] [-4]/[-6] target
+
+The program will keep sending ICMP "echo requests" every 1 second, and reporting RTT when receiving "echo reply" messages. 
+If none "echo reply" is received in set TTL, the program will report "time exceeded”. Default TTL is 3s.
+When ctrl+c is pressed, the program will report packet loss and exit.
+Note: IPv6 support hasn't been tested because my ISP doesn't support IPv6.
